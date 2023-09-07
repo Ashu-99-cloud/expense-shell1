@@ -5,7 +5,7 @@ useradd expense
 
 cp backend.service /etc/systemd/system/backend.service
 
-
+# sudo rm -rf expense-shell/
 rm -rf /app
 mkdir /app
 curl -o /tmp/backend.zip https://expense-artifacts.s3.amazonaws.com/backend.zip
