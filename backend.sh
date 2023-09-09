@@ -2,7 +2,7 @@ source common.sh
 component=backend
 
 echo Install NodeJS repos for backend.sh
-curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>$log_file
+curl -sL https://rpm.nodesource.com/setup_lts.x | bash &&>>$log_file
 
 echo Install NodeJS
 dnf install nodejs -y &>>$log_file
@@ -22,7 +22,7 @@ cd /app
 download_and_extract
 
 echo Download dependencies
-npm install &>>$log_file
+npm install &&>>$log_file
 
 echo start backend service
 systemctl daemon-reload &>>$log_file
