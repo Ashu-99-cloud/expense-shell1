@@ -7,6 +7,7 @@ if [ $? -eq 0 ]; then
   echo success
 else
   echo failed
+  exit 1
 fi
 
 echo placing expense config file in Nginx
@@ -15,6 +16,7 @@ if [ $? -eq 0 ]; then
   echo -e "\e[32mSuccess\e[0m"
 else
   echo -e "\e[31mFailed\e[0m"
+  exit 1
 fi
 
 echo removing old Nginx content
@@ -23,6 +25,7 @@ if [ $? -eq 0 ]; then
   echo -e "\e[32mSuccess\e[0m"
 else
   echo -e "\e[31mFailed\e[0m"
+  exit 1
 fi
 
 cd /usr/share/nginx/html
@@ -36,4 +39,5 @@ if [ $? -eq 0 ]; then
   echo -e "\e[32mSuccess\e[0m"
 else
   echo -e "\e[31mFailed\e[0m"
+  exit 1
 fi

@@ -7,6 +7,7 @@ if [ $? -eq 0 ]; then
   echo -e "\e[32mSuccess\e[0m"
 else
   echo -e "\e[31mFailed\e[0m"
+  exit 1
 fi
 
 echo Install NodeJS
@@ -15,6 +16,7 @@ if [ $? -eq 0 ]; then
   echo -e "\e[32mSuccess\e[0m"
 else
   echo -e "\e[31mFailed\e[0m"
+  exit 1
 fi
 
 echo Copy backend service file
@@ -23,6 +25,7 @@ if [ $? -eq 0 ]; then
   echo -e "\e[32mSuccess\e[0m"
 else
   echo -e "\e[31mFailed\e[0m"
+  exit 1
 fi
 
 echo add application user
@@ -31,6 +34,7 @@ if [ $? -eq 0 ]; then
   echo -e "\e[32mSuccess\e[0m"
 else
   echo -e "\e[31mFailed\e[0m"
+  exit 1
 fi
 
 echo clean app content
@@ -40,6 +44,7 @@ if [ $? -eq 0 ]; then
   echo -e "\e[32mSuccess\e[0m"
 else
   echo -e "\e[31mFailed\e[0m"
+  exit 1
 fi
 
 mkdir /app
@@ -53,6 +58,7 @@ if [ $? -eq 0 ]; then
   echo -e "\e[32mSuccess\e[0m"
 else
   echo -e "\e[31mFailed\e[0m"
+  exit 1
 fi
 
 echo start backend service
@@ -63,6 +69,7 @@ if [ $? -eq 0 ]; then
   echo -e "\e[32mSuccess\e[0m"
 else
   echo -e "\e[31mFailed\e[0m"
+  exit 1
 fi
 
 echo install MySQL client
@@ -71,6 +78,7 @@ if [ $? -eq 0 ]; then
   echo -e "\e[32mSuccess\e[0m"
 else
   echo -e "\e[31mFailed\e[0m"
+  exit 1
 fi
 
 echo Load the schema
@@ -79,4 +87,5 @@ if [ $? -eq 0 ]; then
   echo -e "\e[32mSuccess\e[0m"
 else
   echo -e "\e[31mFailed\e[0m"
+  exit 1
 fi
