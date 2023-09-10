@@ -1,15 +1,16 @@
 source common.sh
 component=backend
 
-echo Install NodeJS repos for backend.sh
-curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>$log_file
-check_status
+type npm &>>$log_file
+if [ $? -ne 0 ]; then
+  echo Install NodeJS repos for backend.sh
+  curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>$log_file
+  check_status
 
-
-echo Install NodeJS
-dnf install nodejs -y &>>$log_file
-check_status
-
+  echo Install NodeJS
+  dnf install nodejs -y &>>$log_file
+  check_status
+fi
 
 echo Copy backend service file
 cp backend.service /etc/systemd/system/backend.service &>>$log_file
