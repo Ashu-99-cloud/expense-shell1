@@ -54,5 +54,6 @@ check_status
 
 
 echo Load the schema
-mysql -h mysql.ashudevops.online -uroot -pExpenseApp@1 < /app/schema/backend.sql &>>$log_file
+mysql_root_password=$1
+mysql -h mysql.ashudevops.online -uroot -p$mysql_root_password < /app/schema/backend.sql &>>$log_file
 check_status
