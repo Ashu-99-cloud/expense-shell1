@@ -17,7 +17,10 @@ check_status
 
 
 echo add application user
-useradd expense &>>$log_file
+id expense &>>$log_file
+if [ $? -ne 0 ]; then
+  useradd expense &>>$log_file
+fi
 check_status
 
 
